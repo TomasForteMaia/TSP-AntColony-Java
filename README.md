@@ -162,6 +162,7 @@ Example:
 
 Every τ/20 steps, the program prints:
 
+```bash
 Present instant
 
 Number of move events
@@ -171,9 +172,11 @@ Number of evaporation events
 Top candidate cycles found so far
 
 Best Hamiltonian cycle (if any)
+```
 
 Example:
 
+```bash
 Observation 10:
 Present instant: 150.0
 Number of move events: 1234
@@ -182,6 +185,7 @@ Top candidate cycles:
 {1,3,2,4,5}:14
 {1,3,2,5,4}:21
 Best Hamiltonian cycle: {1,5,4,2,3}:14
+```
 
 ## 📚 Academic Context
 
