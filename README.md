@@ -78,6 +78,7 @@ Or use find to automatically include all .class files:
 
 ```bash
 jar cmf manifest.txt project.jar $(find . -name "*.class")
+
 ```
 
 ### 4. View the Contents of the JAR (Optional)
