@@ -137,3 +137,7 @@ Best Hamiltonian cycle: {1,5,4,2,3}:14
 This project was developed as part of the Object-Oriented Programming (OOP) course at Instituto Superior Técnico, 2022/23.
 
 It demonstrates the application of swarm intelligence and discrete event simulation to a classical NP-complete problem.
+
+## 📖 Documentation
+
+- [UML Class Diagram](docs/UML.pdf) – provides an overview of the system’s classes, packages, and architecture.
