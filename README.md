@@ -47,9 +47,11 @@ From the root of the `src/` folder, compile all Java source files to generate th
 
 ```bash
 javac ao/*.java distribution/*.java dss/*.java eventqueue/*.java graph/*.java main/*.java
+```
 
 Alternatively, use the following to include all .java files in subdirectories:
 
+```bash
 javac */*.java
 ```
 ### **2. Create a Manifest File**
