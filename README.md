@@ -139,21 +139,24 @@ java -jar project.jar -f path/to/input.txt
 
 The input file format:
 
+```bash
 n n1 α β δ η ρ γ ν τ
 0 a12 a13 ... a1n
 a21 0 a23 ... a2n
 ... ... ... ... ...
 an1 an2 an3 ... 0
-
+```
 
 Example:
 
+```bash
 5 1 1.0 1.0 0.2 2.0 10.0 0.5 200 300.0
 0 3 6 6 2
 3 0 3 2 5
 6 3 0 0 0
 6 2 0 0 1
 2 5 0 1 0
+```
 
 📊 Simulation Output
 
