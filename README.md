@@ -32,38 +32,79 @@ src/
 ├── distribution/ # Random distributions (exponential, RNG strategies)
 └── ...
 
+## ⚙️ Compilation & Execution
+
+### 🛠️ Creating an Executable JAR File
+
+Here is the standard procedure to **compile** and **package** the project into an **executable JAR file**.
 
 ---
 
-## ⚙️ Compilation & Execution
 
-### 1. Compile
-From the project root:
+### **1. Compile Your Java Code**
+
+From the root of the `src/` folder, compile all Java source files to generate the corresponding `.class` files:
 
 ```bash
-javac */*.java */*/*.java
+javac ao/*.java distribution/*.java dss/*.java eventqueue/*.java graph/*.java main/*.java
 
+Alternatively, use the following to include all .java files in subdirectories:
 
-This compiles all .java files into .class files.
+javac */*.java
+```
+### **2. Create a Manifest File**
 
-2. Create JAR
+Create a file named manifest.txt containing the following:
 
-Bundle everything into an executable JAR:
+```bash
+Main-Class: main.Main
 
-jar cfe project.jar main.Main $(find . -name "*.class")
+```
 
+⚠️ Note: The blank line at the end is required.
+main.Main must match the fully qualified name of the class with the main() method.
 
-Now you can run with:
+### **3. Create the Executable JAR**
 
+Bundle the compiled .class files and the manifest into an executable JAR named project.jar:
+
+```bash
+jar cmf manifest.txt project.jar ao/* distribution/* dss/* eventqueue/* graph/* main/*
+```
+
+Or use find to automatically include all .class files:
+
+```bash
+jar cmf manifest.txt project.jar $(find . -name "*.class")
+```
+
+### 4. View the Contents of the JAR (Optional)
+
+To see the contents of your project.jar:
+
+```bash
+jar tf project.jar
+```
+
+### 5. Run the Application
+
+Run the JAR file from the command line:
+
+```bash
 java -jar project.jar ...
+```
 
 🚀 Usage
+
+Depending on the mode of execution, use one of the following:
 
 The program can be run in two ways:
 
 1. Random graph generation
-java -jar project.jar -r n a n1 α β δ η ρ γ ν τ
 
+```bash
+java -jar project.jar -r n a n1 α β δ η ρ γ ν τ
+```
 
 n → number of nodes
 
@@ -83,11 +124,15 @@ n1 → nest node
 
 Example:
 
+```bash
 java -jar project.jar -r 5 10 1 1.0 1.0 0.2 2.0 10.0 0.5 200 300.0
+```
 
 2. Input from file
-java -jar project.jar -f path/to/input.txt
 
+```bash
+java -jar project.jar -f path/to/input.txt
+```
 
 The input file format:
 
@@ -132,7 +177,7 @@ Top candidate cycles:
 {1,3,2,5,4}:21
 Best Hamiltonian cycle: {1,5,4,2,3}:14
 
-📚 Academic Context
+## 📚 Academic Context
 
 This project was developed as part of the Object-Oriented Programming (OOP) course at Instituto Superior Técnico, 2022/23.
 
